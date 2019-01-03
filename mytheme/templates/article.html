@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block body_title %}
+<div class="navigation-container">
+    <span id="home-link">
+        <a href="/">Home</a>
+    </span>
+</div>
+{% endblock body_title %}
+
+{% block content %}
+<section id="content" class="body">
+  <header>
+    <h2 class="entry-title">
+      <a href="#" rel="bookmark"
+         title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h2>
+ {% import 'translations.html' as translations with context %}
+ {{ translations.translations_for(article) }}
+  </header>
+  <footer class="post-info">
+    <time class="published" datetime="{{ article.date.isoformat() }}">
+      {{ article.locale_date }}
+    </time>
+	{% if article.modified %}
+    <time class="modified" datetime="{{ article.modified.isoformat() }}">
+      {{ article.locale_modified }}
+    </time>
+	{% endif %}
+    {% if article.authors %}
+    <address class="vcard author">
+      By {% for author in article.authors %}
+          <a class="url fn" href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>
+        {% endfor %}
+    </address>
+    {% endif %}
+  </footer><!-- /.post-info -->
+  <div class="entry-content">
+    {{ article.content }}
+  </div><!-- /.entry-content -->
+</section>
+<p>
+  <a href="https://github.com/htwenning/htwenning.github.io/issues">Issues</a>
+</p>
+{% endblock %}

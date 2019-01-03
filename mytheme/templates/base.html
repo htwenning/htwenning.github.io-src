@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}">
+<head>
+        <title>{{ SITENAME }}</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="/theme/css/main.css"/>
+        <link rel="stylesheet" href="/theme/css/fonts.css"/>
+        <link rel="shortcut icon" type="image/png" href="/theme/favicon.png">
+		{% block header %}{% endblock %}
+</head>
+
+<body>
+    <section id ="posts">
+      {% block body_title %}
+        <h1><a href="/"><strong>{{ SITENAME }}</strong></a></h1>
+      {% endblock body_title %}
+        {% block content %}
+        {% endblock %}
+        <a href="/">
+          <svg id="ghost-icon" width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+            <g>
+            <title>background</title>
+            <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+            <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"></rect>
+            </g>
+            </g>
+            <g>
+            <title>Layer 1</title>
+            <rect id="svg_5" height="221" width="79" y="20" x="106.5" stroke-width="0" stroke="null" fill="#84D3DB"></rect>
+            <rect stroke="null" id="svg_7" height="201.000006" width="145.999999" y="39" x="73.5" stroke-width="0" fill="#84D3DB"></rect>
+            <rect stroke="null" id="svg_8" height="185.999999" width="177.000003" y="54" x="58.5" stroke-width="0" fill="#84D3DB"></rect>
+            <rect stroke="null" id="svg_9" height="154.000007" width="220.000014" y="76" x="36.5" stroke-width="0" fill="#84D3DB"></rect>
+            <rect stroke="null" id="svg_10" height="89.000004" width="255.000018" y="130" x="22.5" stroke-width="0" fill="#84D3DB"></rect>
+            <rect stroke="null" id="svg_11" height="127" width="36.000004" y="130" x="22.5" stroke-width="0" fill="#84D3DB"></rect>
+            <rect stroke="null" id="svg_12" height="144.000007" width="21.000004" y="131" x="22.5" stroke-width="0" fill="#84D3DB"></rect>
+            <rect stroke="null" id="svg_13" height="122.999998" width="42.000004" y="130" x="235.499999" stroke-width="0" fill="#84D3DB"></rect>
+            <rect stroke="null" id="svg_14" height="145.99999" width="24.000004" y="130" x="253.499998" stroke-width="0" fill="#84D3DB"></rect>
+            <rect stroke="null" id="svg_19" height="116" width="40.000001" y="157" x="93.499999" stroke-width="0" fill="#84D3DB"></rect>
+            <rect stroke="null" id="svg_20" height="116" width="40.000001" y="158" x="163.499999" stroke-width="0" fill="#84D3DB"></rect>
+            <rect stroke="null" id="svg_21" height="116" width="40.000001" y="139" x="76.499999" stroke-width="0" fill="#84D3DB"></rect>
+            <rect stroke="null" id="svg_22" height="116" width="40.000001" y="139" x="177.499999" stroke-width="0" fill="#84D3DB"></rect>
+            <rect stroke="null" id="svg_24" height="88" width="36.000002" y="76" x="94.499998" stroke-width="0" fill="#ffffff"></rect>
+            <rect stroke="null" id="svg_26" height="56.999994" width="69.000002" y="91.000001" x="76.499996" stroke-width="0" fill="#ffffff"></rect>
+            <rect stroke="null" id="svg_33" height="88" width="36.000002" y="76" x="94.499998" stroke-width="0" fill="#ffffff"></rect>
+            <rect stroke="null" id="svg_34" height="56.999994" width="69.000002" y="91.000001" x="76.499996" stroke-width="0" fill="#ffffff"></rect>
+            <rect class="ghost-icon-eye" stroke="null" id="svg_35" height="39" width="33" y="109" x="113.5" stroke-width="0" fill="#0000ff"></rect>
+            <rect stroke="null" id="svg_36" height="88" width="36.000002" y="77" x="199.499998" stroke-width="0" fill="#ffffff"></rect>
+            <rect stroke="null" id="svg_37" height="56.999994" width="69.000002" y="92.000001" x="181.499996" stroke-width="0" fill="#ffffff"></rect>
+            <rect class="ghost-icon-eye" stroke="null" id="svg_38" height="39" width="33" y="110" x="218.5" stroke-width="0" fill="#0000ff"></rect>
+            </g>
+            </svg>
+        </a>
+        <footer id="footer" class="footer">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+                which takes great advantage of <a href="http://python.org">Python</a>, 
+                theme cloned from <a href="https://github.com/mikeecb/cypher-jekyll-theme">cypher Jekyll theme</a>.
+                </address><!-- /#about -->
+        </footer><!-- /#contentinfo -->
+        </section>
+</body>
+</html>

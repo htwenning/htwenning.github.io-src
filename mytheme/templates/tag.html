@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block header %}
+	<link rel="stylesheet" href="/theme/css/timeline-style.css">
+	<link rel="stylesheet" href="/theme/css/timeline-demo.css">
+{% endblock %}
+{% block body_title %}
+<div class="navigation-container">
+  <span id="home-link">
+	<a href="/">Home</a>
+  </span>
+</div>
+{% endblock body_title %}
+{% block content %}
+	<section class="cd-timeline js-cd-timeline">
+	  <div class="cd-timeline__container">
+		{% for article in articles %}
+		<div class="cd-timeline__block js-cd-block">
+		  <div class="cd-timeline__img cd-timeline__img--picture js-cd-img">
+			<img src="/theme/cd-icon-picture.svg">
+		  </div> <!-- cd-timeline__img -->
+
+		  <div class="cd-timeline__content js-cd-content">
+			<a href="/{{article.url}}"><h2>{{ article.title }}</h2></a>
+			<span class="cd-timeline__date">{{article.locale_date}}</span>
+		  </div> <!-- cd-timeline__content -->
+		</div> <!-- cd-timeline__block -->
+		{% endfor %}
+
+		</div>
+	</section> <!-- cd-timeline -->
+
+<script src="/theme/js/timeline.js"></script>
+{% endblock%}
