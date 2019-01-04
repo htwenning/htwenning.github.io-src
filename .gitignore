@@ -2,4 +2,5 @@ pelican.pid
 srv.pid
 .idea
 __pycache__
-.git_bak
+output/
+
