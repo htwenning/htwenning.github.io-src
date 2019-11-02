@@ -3,4 +3,4 @@ srv.pid
 .idea
 __pycache__
 output/
-
+venv/

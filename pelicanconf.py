@@ -50,9 +50,4 @@ STANDALONE_CATEGORY_PAGES = [
         'page_template': 'timeline',
         'article_template': 'article'
     },
-    {
-        'category_name': 'PythonEvents',
-        'page_template': 'timeline',
-        'article_template': 'article'
-    },
 ]
