@@ -9,7 +9,11 @@
 {% block body_title %}
 <div class="navigation-container">
     <span id="home-link">
-        <a href="/">Home</a>
+        {% if category== 'travels' %}
+          <a href="/travels.html">Back</a>
+        {% else %}
+          <a href="/">Home</a>
+        {% endif %}
     </span>
 </div>
 {% endblock body_title %}

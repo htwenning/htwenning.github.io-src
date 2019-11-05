@@ -2,6 +2,9 @@
 {% block header %}
 	<link rel="stylesheet" href="/theme/css/timeline-style.css">
 	<link rel="stylesheet" href="/theme/css/timeline-demo.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+	<script src="/theme/js/world.js"></script>
 {% endblock %}
 {% block body_title %}
 <div class="navigation-container">
@@ -11,12 +14,76 @@
 </div>
 {% endblock body_title %}
 {% block content %}
+	<div id="container" style="position: relative; width: 500px; height: 300px; left:0; top: 0px;"></div>
+	<script>
+		var map = new Datamap({
+			element: document.getElementById('container'),
+			scope: 'world',
+			fills: {
+				'JPN': '#7f7f7f',
+				'CN': '#D55656',
+				'TH': '#1E9DF0',
+				defaultFill: '#C1E3C1'
+			},
+			data: {
+				// 'RUS': {fillKey: 'RUS'},
+			}
+		});
+		let bubbles = [
+			{
+				name: 'Osaka',
+				radius: 5,
+				country: 'Japan',
+				fillKey: 'JPN',
+				latitude: 34.66,
+				longitude: 135.50,
+				date: "2019-01-29"
+			},
+			{
+				name: 'Nanjing',
+				radius: 5,
+				country: 'China',
+				fillKey: 'CN',
+				latitude: 35.05,
+				longitude: 118.78,
+				date: "2019-01-01"
+			},
+			{
+				name: 'Bangkok',
+				radius: 5,
+				country: 'Thiland',
+				fillKey: 'TH',
+				latitude: 13.76,
+				longitude: 100.52,
+				date: "2019-07-26"
+			},
+			{
+				name: 'Phuket',
+				radius: 5,
+				country: 'Thiland',
+				fillKey: 'TH',
+				latitude: 7.91,
+				longitude: 98.30,
+				date: "2019-02-25"
+			},
+		]
+		setTimeout(() => { // only start drawing bubbles on the map when map has rendered completely.
+            map.bubbles(bubbles, {
+                popupTemplate: function (geo, data) {
+					return ['<div class="hoverinfo">' +  data.name,
+					'<br/>' +  data.country + '',
+					'<br/>' +  data.date + '',
+					'</div>'].join('');
+                }
+            });
+        }, 1000);
+	</script>
 	<section class="cd-timeline js-cd-timeline">
 	  <div class="cd-timeline__container">
 		{% for article in articles %}
 		<div class="cd-timeline__block js-cd-block">
 		  <div class="cd-timeline__img cd-timeline__img--picture js-cd-img">
-			<img src="/theme/cd-icon-picture.svg">
+			<img src="/images/icons/{{ article.title }}.png" onerror="this.src='/theme/cd-icon-picture.svg'">
 		  </div> <!-- cd-timeline__img -->
 
 		  <div class="cd-timeline__content js-cd-content">
